@@ -45,7 +45,7 @@ export default function HomePage() {
               discount={item.discount}
               location={item.location}
               quality={item.quality}
-              offAmount={item.offAmount} // ✅ Important fix here
+              offAmount={item.offAmount || 0} // ✅ Important fix here
             />
           ))}
         </div>
@@ -82,10 +82,9 @@ export default function HomePage() {
                 price={item.price}
                 originalPrice={item.originalPrice}
                 discount={item.discount}
-                offAmount={item.offAmount}
+                // Remove offAmount prop as it's not defined in DealProductCard
                 location={item.location}
-                quality={item.quality}
-              />
+                quality={item.quality} sold={0}              />
             ))}
           </div>
         </div>
@@ -112,10 +111,9 @@ export default function HomePage() {
               price={item.price}
               originalPrice={item.originalPrice}
               discount={item.discount}
-              offAmount={item.offAmount}
+              // Remove offAmount prop as it's not defined in DealProductCard
               location={item.location}
-              quality={item.quality}
-            />
+              quality={item.quality} sold={0}            />
           ))}
         </div>
       </section>
@@ -141,7 +139,7 @@ export default function HomePage() {
               price={item.price}
               originalPrice={item.originalPrice}
               discount={item.discount}
-              offAmount={item.offAmount}
+              offAmount={item.offAmount || 0}
               location={item.location}
               quality={item.quality}
             />
