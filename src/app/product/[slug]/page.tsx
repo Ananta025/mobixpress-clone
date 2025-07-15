@@ -2,16 +2,19 @@
 'use client'
 import Image from 'next/image'
 import { trendingProducts } from '@/data/products'
+import { use } from 'react'
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export default function ProductPage({ params }: Props) {
+  const { slug } = use(params)
+  
   const product = trendingProducts.find(
-    (item) => item.title.toLowerCase().replace(/\s+/g, '-') === params.slug
+    (item) => item.title.toLowerCase().replace(/\s+/g, '-') === slug
   )
 
   if (!product) {
