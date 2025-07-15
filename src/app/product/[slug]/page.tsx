@@ -24,7 +24,7 @@ export default function ProductPage({ params }: Props) {
         {/* Left Side - Images Section */}
         <div className="space-y-6 flex flex-col items-center">
           {/* Main Product Image */}
-          <div className="relative bg-gray-50 rounded-lg p-6 border w-[85%]">
+          <div className="relative bg-gray-50 rounded-lg p-6 border w-[85%] border-gray-400">
             {/* Share icon inside image */}
             <button className="absolute top-3 right-3 bg-white border border-gray-300 rounded-full p-1 hover:shadow">
               <span title="Share">🔗</span>
@@ -48,9 +48,9 @@ export default function ProductPage({ params }: Props) {
           </div>
 
           {/* Thumbnail Images */}
-          <div className="flex space-x-3 w-[85%]">
+          <div className="flex space-x-3 w-[85%] border border-gray-200 p-2 rounded-lg overflow-x-auto">
             {product.thumbnails?.map((thumb, index) => (
-              <div key={index} className="w-20 h-20 relative border rounded-lg overflow-hidden cursor-pointer hover:border-blue-500">
+              <div key={index} className="w-20 h-20 relative border rounded-lg overflow-hidden cursor-pointer border-gray-300 hover:border-blue-300">
                 <Image 
                   src={thumb} 
                   alt={`Thumbnail ${index}`} 
@@ -171,6 +171,24 @@ export default function ProductPage({ params }: Props) {
                 <span>Buy Now</span>
             </button>
             </div>
+
+
+            {/* Product Description Table */}
+            {product.specs && (
+            <div className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">Product Specifications</h2>
+                <table className="w-full border text-sm">
+                <tbody>
+                    {product.specs.map((spec, index) => (
+                    <tr key={index} className="border-t">
+                        <td className="p-2 font-medium bg-gray-50 w-1/3">{spec.label}</td>
+                        <td className="p-2">{spec.value}</td>
+                    </tr>
+                    ))}
+                </tbody>
+                </table>
+            </div>
+            )}
         </div>
       </div>
     </div>

@@ -1,13 +1,38 @@
 export const trendingProducts = [
   {
     title: "APPLE IPHONE 16 PRO MAX 256 GB Black (Apple India) iOS 17",
-    image: "/APPLE_IPHONE.webp",
     price: 91999,
     originalPrice: 144900,
     discount: 37,
-    offAmount: 52901,
+    quality: "Super Mint",
+    storeName: "MobiXpress Barrackpore",
+    color: "Black",
+    storage: "256 GB",
+    age: "6 Months Old",
+    imei: "****13472",
+    image: "/REALME_NARZO_70X_5Gdvdv.webp",
+    backImage: "/VIVO_T3_ULTRA_5Gsdv.webp",
+    frontImage: "/VIVO_T3_ULTRA_5Gsdv.webp",
+    thumbnails: [
+      "/VIVO_T3_ULTRA_5Gsdv.webp",
+      "/REALME_NARZO_70X_5Gdvdv.webp",
+      "/VIVO_V27_5Gdavav.webp"
+    ],
+    colorOptions: [
+      "Black", "Silver", "Gold", "Deep Purple"
+    ],
+    storageOptions: [
+      "128 GB", "256 GB", "512 GB", "1 TB"
+    ],
     location: "BARRACKPORE",
-    quality: "Super Mint"
+    specs: [
+      { label: "Brand", value: "Apple" },
+      { label: "Model", value: "iPhone 16 Pro Max" },
+      { label: "Storage", value: "256 GB" },
+      { label: "Battery", value: "4323 mAh" },
+      { label: "Color", value: "Space Black" },
+      { label: "Warranty", value: "6 Months Seller Warranty" }
+    ]
   },
   {
     title: "Samsung Galaxy S24 Ultra 512 GB Titanium Gray (Samsung India) Android 14",
