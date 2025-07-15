@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} overflow-x-hidden`}>
         <TopBanner />
         <Navbar />
-        <main className="min-h-screen max-w-7xl mx-auto px-4">{children}</main>
+        <main className="min-h-screen max-w-7xl mx-auto px-2 sm:px-4">{children}</main>
         <Footer />
       </body>
     </html>

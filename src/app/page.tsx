@@ -12,14 +12,14 @@ import {categories} from '@/data/categories'
 
 export default function HomePage() {
   return (
-    <div className="space-y-12 mt-6">
+    <div className="space-y-8 sm:space-y-12 mt-4 sm:mt-6">
       {/* 🏠 Hero Section */}
       <Hero />
 
       {/* 📂 Categories */}
       <section>
         <SectionHeader title="Explore Categories" />
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  gap-3 px-12 py-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 px-2 sm:px-6 md:px-12 py-6 sm:py-10">
           {categories.map((category) => (
             <CategoryCard
               key={category.title}
@@ -34,7 +34,7 @@ export default function HomePage() {
       {/* 🔥 Trending Products */}
       <section>
         <SectionHeader title="🔥 Trending Products" />
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 py-12 px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 py-6 sm:py-12 px-2 sm:px-6 md:px-10">
           {trendingProducts.map((item) => (
             <TrendingProductCard
               key={item.title}
@@ -52,11 +52,11 @@ export default function HomePage() {
       </section>
 
       {/* 🕒 Deal of the Day */}
-      <section className="px-12 py-10">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+      <section className="px-2 sm:px-6 md:px-12 py-6 sm:py-10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
           {/* Left Part */}
-          <div className="flex flex-col items-start mb-4 md:mb-0 md:mr-6">
-            <h2 className="text-2xl font-semibold mb-2">
+          <div className="flex flex-col items-start mb-4 lg:mb-0 lg:mr-6">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-2">
               <span className="text-red-600 italic">Deal</span> Of The Day
             </h2>
             <button className="border border-red-500 text-red-500 px-3 py-1 rounded-full text-sm hover:bg-red-500 hover:text-white transition mb-2">
@@ -73,7 +73,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Part */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full lg:w-auto">
             {trendingProducts.slice(0, 3).map((item) => (
               <DealProductCard
                 key={item.title}
@@ -92,9 +92,9 @@ export default function HomePage() {
 
 
       {/* 🔥 Hot Deal */}
-      <section className="px-12 py-10">
+      <section className="px-2 sm:px-6 md:px-12 py-6 sm:py-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-lg sm:text-xl font-semibold">
             <span className="text-red-600 italic">Hot</span> Deal
           </h2>
           <button className="border border-red-500 text-red-500 px-3 py-1 rounded-full text-sm hover:bg-red-500 hover:text-white transition">
@@ -102,7 +102,7 @@ export default function HomePage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {trendingProducts.slice(4, 8).map((item) => (
             <DealProductCard
               key={item.title}
@@ -120,9 +120,9 @@ export default function HomePage() {
 
 
       {/* 🌟 Recommended Product */}
-      <section className="px-12 py-10">
+      <section className="px-2 sm:px-6 md:px-12 py-6 sm:py-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-lg sm:text-xl font-semibold">
             <span className="text-red-600 italic">Recommended</span> Product
           </h2>
           <button className="border border-red-500 text-red-500 px-3 py-1 rounded-full text-sm hover:bg-red-500 hover:text-white transition">
@@ -130,7 +130,7 @@ export default function HomePage() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {trendingProducts.slice(8, 12).map((item) => (
             <TrendingProductCard
               key={item.title}
@@ -155,9 +155,9 @@ export default function HomePage() {
 
 
       {/* 🏪 Our Branch */}
-      <section className="px-12 py-10">
+      <section className="px-2 sm:px-6 md:px-12 py-6 sm:py-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">
+          <h2 className="text-lg sm:text-xl font-semibold">
             <span className="text-red-600 italic">Our</span> Branch
           </h2>
           <div className="flex space-x-2">
@@ -170,7 +170,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {branches.map((branch) => (
             <BranchCard key={branch.name} {...branch} />
           ))}

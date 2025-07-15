@@ -8,7 +8,7 @@ export default function MainBanner() {
         alt="Main Banner"
         width={900}
         height={400}
-        className="rounded-xl object-cover w-full"
+        className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px]"
       />
     </div>
   )

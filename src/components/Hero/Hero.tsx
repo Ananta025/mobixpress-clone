@@ -3,7 +3,7 @@ import PromoCard from './PromoCard'
 
 export default function Hero() {
   return (
-    <div className="w-full max-w-6xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="w-full max-w-6xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 px-2 sm:px-4">
       <div className="md:col-span-2">
         <MainBanner />
       </div>

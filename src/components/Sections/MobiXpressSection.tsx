@@ -12,15 +12,15 @@ export default function MobiXpressSection() {
   ];
 
   return (
-    <div className="bg-white py-16 px-4">
+    <div className="bg-white py-8 sm:py-16 px-2 sm:px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-center">
           {/* Left Column - Company Description */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               MobiXpress - Trusted Source for Premium Pre-Owned Mobiles.
             </h2>
-            <p className="text-gray-600 leading-relaxed text-justify">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
               MobiXpress, known as smartphone expert and leading industry from last 5 years, focused on 
               delivering quality products at most affordable prices along with continued customer support services. We 
               ensure best quality products passed from 50 strict quality checks. We aims to contribute towards 
@@ -36,18 +36,19 @@ export default function MobiXpressSection() {
               alt="MobiXpress Banner"
               width={250}
               height={150}
+              className="w-auto h-auto max-w-full max-h-[150px] sm:max-h-[200px]"
             />
           </div>
 
           {/* Right Column - Price Ranges */}
           <div className="lg:col-span-1">
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {priceRanges.map((range, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 border border-gray-200 rounded-md p-2 cursor-pointer transition-all duration-200 hover:bg-red-500 hover:text-white hover:translate-x-3"
+                  className="bg-gray-50 border border-gray-200 rounded-md p-2 cursor-pointer transition-all duration-200 hover:bg-red-500 hover:text-white hover:translate-x-1 sm:hover:translate-x-3"
                 >
-                  <span className="font-medium">
+                  <span className="font-medium text-sm sm:text-base">
                     Between ₹{range.min.toLocaleString()} & ₹{range.max.toLocaleString()}
                   </span>
                 </div>
