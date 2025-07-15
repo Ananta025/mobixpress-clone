@@ -18,8 +18,7 @@ export default function HomePage() {
 
       {/* 📂 Categories */}
       <section>
-        <SectionHeader title="Explore Categories" />
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 px-2 sm:px-6 md:px-12 py-6 sm:py-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-3 px-2 sm:px-6 md:px-12 py-6 sm:py-10">
           {categories.map((category) => (
             <CategoryCard
               key={category.title}

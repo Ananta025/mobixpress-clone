@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ShoppingCart, Grid3X3, LogIn } from 'lucide-react'
 import clsx from 'clsx'
 
@@ -15,12 +15,53 @@ const navLinks = [
   { label: 'Hot Deals', href: '/hot-deals', isHot: true },
 ]
 
+const typingTexts = [
+  "Search for products",
+  "Try 'iPhone 15'",
+  "Try 'Samsung S24'",
+  "Try 'Smart Watch'",
+]
+
 export default function Navbar() {
   const [cartCount] = useState(1)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [placeholder, setPlaceholder] = useState(typingTexts[0])
+
+  useEffect(() => {
+    let textIndex = 0
+    let charIndex = 0
+    let typing = true
+    let timeout: NodeJS.Timeout
+
+    const type = () => {
+      if (typing) {
+        if (charIndex < typingTexts[textIndex].length) {
+          setPlaceholder(typingTexts[textIndex].slice(0, charIndex + 1))
+          charIndex++
+          timeout = setTimeout(type, 60)
+        } else {
+          typing = false
+          timeout = setTimeout(type, 1200)
+        }
+      } else {
+        if (charIndex > 0) {
+          setPlaceholder(typingTexts[textIndex].slice(0, charIndex - 1))
+          charIndex--
+          timeout = setTimeout(type, 30)
+        } else {
+          typing = true
+          textIndex = (textIndex + 1) % typingTexts.length
+          timeout = setTimeout(type, 400)
+        }
+      }
+    }
+
+    type()
+    return () => clearTimeout(timeout)
+  }, [])
 
   return (
-    <header className="w-full bg-white z-50 shadow-sm">
+    <header className="w-full bg-white z-50">
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-12 xl:px-44 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -37,11 +78,14 @@ export default function Navbar() {
         <div className="hidden md:flex flex-1 mx-6 max-w-xl relative">
           <input
             type="text"
-            placeholder="oppo"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+            placeholder={placeholder}
+            className="w-full px-6 py-4.5 rounded-xl focus:outline-none text-md bg-gray-100"
           />
-          <button className="absolute right-2 top-1/2 -translate-y-1/2 text-red-600">
-            🔍
+          <button className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
+              <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
           </button>
         </div>
 
@@ -100,7 +144,7 @@ export default function Navbar() {
         <div className="relative">
           <input
             type="text"
-            placeholder="oppo"
+            placeholder={placeholder}
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
           />
           <button className="absolute right-2 top-1/2 -translate-y-1/2 text-red-600">
