@@ -185,7 +185,7 @@ export default function ProductPage({ params }: Props) {
 
 
         {/* Product Description Table */}
-        <ProductDescription specs={product.specs || []} />
+        <ProductDescription specs={product.specs || []} title={''} />
 
 
     </div>
