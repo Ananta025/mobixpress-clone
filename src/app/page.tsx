@@ -1,5 +1,4 @@
 import Hero from '@/components/Hero/Hero'
-import SectionHeader from '@/components/Sections/SectionHeader'
 import CategoryCard from '@/components/Sections/CategoryCard'
 import TrendingProductCard from '@/components/Sections/TrendingProductCard'
 import DealProductCard from '@/components/Sections/DealProductCard'
