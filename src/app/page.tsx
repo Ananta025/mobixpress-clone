@@ -18,7 +18,7 @@ export default function HomePage() {
 
       {/* 📂 Categories */}
       <section>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-3 px-2 sm:px-6 md:px-12 py-6 sm:py-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 lg:gap-5 sm:gap-3 px-2 sm:px-6 md:px-12 py-6 sm:py-10">
           {categories.map((category) => (
             <CategoryCard
               key={category.title}
@@ -32,8 +32,15 @@ export default function HomePage() {
 
       {/* 🔥 Trending Products */}
       <section>
-        <SectionHeader title="🔥 Trending Products" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 py-6 sm:py-12 px-2 sm:px-6 md:px-10">
+        <div className="flex items-center justify-between px-10">
+          <h2 className="lg:text-3xl sm:text-xl font-medium italic">
+            <span className="text-red-600 ">Trending</span> Products
+          </h2>
+          <button className="border border-red-500 text-red-500 px-3 py-1 rounded-full text-sm hover:bg-red-500 hover:text-white transition">
+            View More →
+          </button>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:py-5 sm:py-12 px-2 sm:px-6 md:px-10">
           {trendingProducts.map((item) => (
             <TrendingProductCard
               key={item.title}

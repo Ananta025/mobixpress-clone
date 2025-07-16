@@ -1,8 +1,8 @@
 export default function TopBanner() {
   return (
-    <div className="bg-red-600 text-white text-center py-1 sm:py-3 text-xs sm:text-sm font-medium px-2">
+    <div className="bg-red-600 text-white text-center lg:py-2.5 sm:py-3 text-xs sm:text-sm font-medium px-2">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-        <span className="bg-white px-2 sm:px-3  sm:py-1 font-medium text-black text-sm sm:text-lg rounded letter-spacing-xs">
+        <span className="bg-white px-2 sm:px-3  sm:py-1 font-bold text-black text-sm sm:text-lg tracking-tighter uppercase">
           MONSOON MAI HOT OFFER, 70% OFF
         </span>
         <span className="hidden sm:inline">Visit MobiXpress Store</span>
